@@ -8,6 +8,11 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * this class represents the puzzle game
+ * it contains information about the puzzle's images, pieces, difficulty level,
+ * current level, and most mechanics related to the game
+ */
 public class Puzzle {
 
     private Images[] imgs;
@@ -96,6 +101,9 @@ public class Puzzle {
         return false;
     }
 
+    /**
+     * all of these draw the puzzle pieces on the graphics context.
+     */
     public void drawPieces(Graphics g) {
         int space = 5;
         int x = 20;
@@ -103,7 +111,7 @@ public class Puzzle {
         int y = 50;
         int contX = 0;
         int contY = 0;
-        for (int i = 0; i < difficulty; i++) {
+        for (int i = 0; i < difficulty; i++) { //updates x and y positions for each puzzle piece
             if (contX > 0) {
                 x += (width + space);
                 contX++;
@@ -117,7 +125,7 @@ public class Puzzle {
             } else
                 contY++;
             if (i != noPiece)
-                if (move && i == pieceMove)
+                if (move && i == pieceMove) //handles the movement of the puzzle piece based on the direction
                     switch (direction) {
                         case 0:
                             calPos = positionPieces[i][2] - Ym;
@@ -172,15 +180,19 @@ public class Puzzle {
                             }
                             break;
                     }
-                else
+                else // draws the puzzle piece normally
                     g.drawImage(pieces[level][orderPieces.get(i)], x, y, null);
             positionPieces[i][0] = x;
             positionPieces[i][1] = x + width;
             positionPieces[i][2] = y;
             positionPieces[i][3] = y + height;
+            //updates the position of the puzzle piece
         }
     }
 
+    /**
+     * checks if the puzzle has been solved and determines if the player won
+     */
     public boolean isWin() {
         boolean win = true;
         for (int i = 0; i < difficulty; i++)
@@ -191,6 +203,10 @@ public class Puzzle {
         return win;
     }
 
+    /**
+     * sets the images for the puzzle pieces by creating instances of the Pieces class
+     * and splitting the images into individual pieces
+     */
     private void setImages() {
         for (int i = 0; i < Images.getNumImages(); i++)
             try {

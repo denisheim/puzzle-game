@@ -6,6 +6,10 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+/**
+ * this class represents images used in the puzzle game
+ * it also provides common functionality and attributes for image handling and manipulation.
+ */
 public abstract class Images {
 
     protected final BufferedImage img;
@@ -31,6 +35,9 @@ public abstract class Images {
         return img.getHeight();
     }
 
+    /**
+     * Resizes a given BufferedImage to the specified size.
+     */
     private BufferedImage rezise(BufferedImage img) {
         int sizeX = 500;
         int sizeY = 500;
@@ -41,11 +48,18 @@ public abstract class Images {
         return dimg;
     }
 
+    /**
+     * checks if the directory for puzzle images exists. If not, it creates the directory and generates a default (black) image.
+     * if the directory exists but the default image is missing, it generates the default image
+     */
     public static void existDirec() {
         File file = new File("Images/Pieces/");
 
         if (!file.exists()) {
+            //create the directory
             file.mkdirs();
+
+            //generate default image
             BufferedImage img = new BufferedImage(500, 500, 5);
             file = new File("Images/Pieces/image0.jpg");
             try {
@@ -66,6 +80,9 @@ public abstract class Images {
         }
     }
 
+    /**
+     * retrieves the total number of images present in the set directory
+     */
     public static int getNumImages() {
         File file = null;
         int cont = 0;
@@ -79,5 +96,5 @@ public abstract class Images {
         return cont;
     }
 
-    public abstract BufferedImage[] splitImage();
+    public abstract BufferedImage[] splitImage(); //splits the image based on the difficulty level
 }

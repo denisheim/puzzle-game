@@ -4,6 +4,9 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
+/**
+ * this class represents a collection of puzzle pieces obtained from an image.
+ */
 public class Pieces extends Images {
 
     private final int difficulty;
@@ -13,6 +16,10 @@ public class Pieces extends Images {
         this.difficulty = difficulty;
     }
 
+    /**
+     * splits the image into individual puzzle pieces based on the difficulty level
+     * returns an array of BufferedImage representing the split puzzle pieces
+     */
     public BufferedImage[] splitImage() {
         BufferedImage[] pieces = new BufferedImage[difficulty*difficulty];
         int chunkWidth = img.getWidth() / difficulty;
