@@ -80,7 +80,7 @@ public class MainPuzzle extends JFrame implements Runnable {
         JButton changeLevel = new JButton("Change level");
         changeLevel.setBounds(0, 250, 130, 50);
         changeLevel.addActionListener((ActionEvent e) -> {
-            Object obj[] = new Object[Pieces.getNumImages()];
+            Object[] obj = new Object[Pieces.getNumImages()];
             for (int i = 0; i < Pieces.getNumImages(); i++)
                 obj[i] = i;
             try {
@@ -192,12 +192,10 @@ public class MainPuzzle extends JFrame implements Runnable {
 
     private void stop()
     {
-        try
-        {
+        try {
             thread.join();
             running = false;
-        } catch (InterruptedException ex)
-        {
+        } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
     }

@@ -36,10 +36,10 @@ public class MainManage extends JFrame
         JPanel jp = new JPanel();
         jp.setLayout(null);
         JFileChooser jfc = new JFileChooser();
-        JLabel titulo = new JLabel("Manage Image");
-        titulo.setBounds(0, 0, 200, 30);
-        titulo.setHorizontalAlignment(JLabel.CENTER);
-        jp.add(titulo);
+        JLabel title = new JLabel("Manage Image");
+        title.setBounds(0, 0, 200, 30);
+        title.setHorizontalAlignment(JLabel.CENTER);
+        jp.add(title);
         JButton upload = new JButton("Upload images");
         upload.setBounds(35, 30, 130, 50);
         upload.addActionListener((ActionEvent e) ->
@@ -68,7 +68,7 @@ public class MainManage extends JFrame
         delete.setBounds(35, 100, 130, 50);
         delete.addActionListener((ActionEvent e) ->
         {
-            Object obj[] = new Object[Pieces.getNumImages()];
+            Object[] obj = new Object[Pieces.getNumImages()];
             for (int i = 0; i < Pieces.getNumImages(); i++)
                 obj[i] = i;
             try

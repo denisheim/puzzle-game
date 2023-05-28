@@ -4,26 +4,22 @@ import DrawPuzzle.Puzzle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class Mouse implements MouseListener
-{
+public class Mouse implements MouseListener {
 
     private int X;
     private int Y;
     private final Puzzle pz;
 
-    public Mouse(Puzzle pz)
-    {
+    public Mouse(Puzzle pz) {
         this.pz = pz;
     }
 
     @Override
-    public void mouseClicked(MouseEvent me)
-    {
+    public void mouseClicked(MouseEvent me) {
     }
 
     @Override
-    public void mousePressed(MouseEvent me)
-    {
+    public void mousePressed(MouseEvent me) {
         X = me.getX();
         Y = me.getY();
         for (int i = 0; i < pz.getDifficulty(); i++)
@@ -75,18 +71,14 @@ public class Mouse implements MouseListener
     }
 
     @Override
-    public void mouseReleased(MouseEvent me)
-    {
+    public void mouseReleased(MouseEvent me) {
     }
 
     @Override
-    public void mouseEntered(MouseEvent me)
-    {
+    public void mouseEntered(MouseEvent me) {
     }
 
     @Override
-    public void mouseExited(MouseEvent me)
-    {
+    public void mouseExited(MouseEvent me) {
     }
-
 }
