@@ -73,7 +73,7 @@ public class MainPuzzle extends JFrame implements Runnable {
         jp.setLayout(null);
         jp.setBounds(550, 0, 150, 620);
         jp.setBackground(Color.DARK_GRAY);
-        JButton reset1 = new JButton("Reset image");
+        JButton reset1 = new JButton("Randomize");
         reset1.setBounds(0, 50, 130, 50);
         reset1.addActionListener((ActionEvent e) -> {
             //resets the image, win status and winT status
@@ -153,7 +153,7 @@ public class MainPuzzle extends JFrame implements Runnable {
             contWin = 0;
         }
         /**
-         * snippet handles post-win actions,
+         * handles post-win actions,
          * like updating the puzzle state variables
          */
         if (win && winT) {

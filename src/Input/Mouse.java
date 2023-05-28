@@ -23,8 +23,9 @@ public class Mouse implements MouseListener {
     }
 
     /**
-     * This method is called when a mouse button is pressed on the component,
+     * this method is called when a mouse button is pressed on the component,
      * it updates the X and Y coordinates of the mouse and checks if a puzzle piece is clicked.
+     * this part of the whole project took me the longest
      */
     @Override
     public void mousePressed(MouseEvent me) {
@@ -35,8 +36,6 @@ public class Mouse implements MouseListener {
                 /**
                  * checks if the current puzzle piece is clicked by comparing the mouse coordinates with the piece's position
                  * if the puzzle piece is clicked, it swaps its position with the clicked piece, updates the necessary variables, and initiates the move
-                 * @param X the X coordinate of the mouse click.
-                 * @param Y the Y coordinate of the mouse click.
                  */
                 if (pz.positionPieces[pz.noPiece][0] < X && pz.positionPieces[pz.noPiece][1] > X && (pz.positionPieces[pz.noPiece][2] - pz.height - 5) < Y && (pz.positionPieces[pz.noPiece][3] - pz.height) > Y) {
                     //swap positions of the current puzzle piece and the clicked piece

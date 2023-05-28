@@ -77,7 +77,7 @@ public class MainManage extends JFrame {
          * creates a "Delete images" button and adds it to the JPanel.
          * when the "Delete images" button is clicked, it displays a dialog box with multiple choices.
          * the choices are generated based on the number of images in the puzzle.
-         * If a choice is selected, the corresponding image is deleted.
+         * if a choice is selected, the corresponding image is deleted.
          */
         JButton delete = new JButton("Delete images");
         delete.setBounds(35, 100, 130, 50);
