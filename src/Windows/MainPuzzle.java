@@ -53,7 +53,6 @@ public class MainPuzzle extends JFrame implements Runnable {
         components();
         this.add(canvas);
     }
-    //pig
 
     public static void main(String[] args) {
         new MainPuzzle().start();
